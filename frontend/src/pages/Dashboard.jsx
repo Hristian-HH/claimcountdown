@@ -283,61 +283,45 @@ export default function Dashboard() {
           {stats && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="card animate-in-delay-1">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-wide text-text-muted font-semibold mb-2">Total Claims</div>
-                    <div className="text-4xl font-bold text-text-primary">{stats.total || 0}</div>
-                  </div>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)' }}>
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                  </div>
+                <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
                 </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Total Claims</p>
+                <p className="text-3xl font-bold text-slate-900 mt-1">{stats.total || 0}</p>
               </div>
 
               <div className="card animate-in-delay-2">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-wide text-text-muted font-semibold mb-2">Active</div>
-                    <div className="text-4xl font-bold text-accent">{stats.active || 0}</div>
-                  </div>
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Active</p>
+                <p className="text-3xl font-bold text-slate-900 mt-1">{stats.active || 0}</p>
               </div>
 
               <div className="card animate-in-delay-3">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-wide text-text-muted font-semibold mb-2">Expiring Soon</div>
-                    <div className="text-4xl font-bold text-warning">{stats.expiring_soon || 0}</div>
-                  </div>
-                  <div className="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                  </div>
+                <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
                 </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Expiring Soon</p>
+                <p className="text-3xl font-bold text-slate-900 mt-1">{stats.expiring_soon || 0}</p>
               </div>
 
               <div className="card animate-in-delay-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-wide text-text-muted font-semibold mb-2">Total Value</div>
-                    <div className="text-4xl font-bold text-success">
-                      ${stats.total_value ? stats.total_value.toFixed(2) : '0.00'}
-                    </div>
-                  </div>
-                  <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Total Value</p>
+                <p className="text-3xl font-bold text-slate-900 mt-1">
+                  ${stats.total_value ? stats.total_value.toFixed(2) : '0.00'}
+                </p>
               </div>
             </div>
           )}
@@ -362,11 +346,9 @@ export default function Dashboard() {
               />
               <div className="border-2 border-dashed border-border-subtle rounded-xl p-8 text-center hover:border-accent/50 hover:bg-accent/5 transition-all cursor-pointer">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                    <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                    </svg>
-                  </div>
+                  <svg className="w-12 h-12 text-text-muted mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
                   <p className="text-sm font-medium text-text-primary mb-1">
                     {uploading ? 'Uploading...' : 'Click to upload or drag and drop'}
                   </p>
@@ -429,8 +411,8 @@ export default function Dashboard() {
 
             {claims.length === 0 ? (
               <div className="p-12 text-center">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-12 h-12 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>

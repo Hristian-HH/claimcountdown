@@ -77,20 +77,9 @@ export default function Settings() {
         {/* Header */}
         <div className="bg-white/60 backdrop-blur-sm border-b border-border-subtle">
           <div className="container-app py-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold tracking-tight text-text-primary">Settings</h1>
-                <p className="text-sm text-text-secondary mt-1.5">Manage your account preferences and notifications</p>
-              </div>
-              <Link
-                to="/dashboard"
-                className="btn btn-secondary"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Back to Dashboard
-              </Link>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-text-primary">Settings</h1>
+              <p className="text-sm text-text-secondary mt-1.5">Manage your account preferences and notifications</p>
             </div>
           </div>
         </div>
@@ -112,15 +101,13 @@ export default function Settings() {
 
             {/* Email Preferences */}
             <div className="card mb-6 animate-in-delay-1">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
+              <div className="flex items-center gap-2.5 mb-6">
+                <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
                 <div className="flex-1">
                   <h2 className="text-lg font-semibold text-text-primary">Email Preferences</h2>
-                  <p className="text-sm text-text-secondary mt-1">Configure your email notification settings</p>
+                  <p className="text-sm text-text-secondary mt-0.5">Configure your email notification settings</p>
                 </div>
               </div>
 
@@ -137,15 +124,15 @@ export default function Settings() {
                             email_alerts_enabled: preferences.email_alerts_enabled === 1 ? 0 : 1
                           })
                         }
-                        className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors ${
+                        className={`relative inline-flex h-7 w-[52px] items-center rounded-full transition-colors ${
                           preferences?.email_alerts_enabled === 1
                             ? 'bg-gradient-to-r from-accent to-purple-600'
                             : 'bg-gray-300'
                         }`}
                       >
                         <span
-                          className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${
-                            preferences?.email_alerts_enabled === 1 ? 'translate-x-8' : 'translate-x-1'
+                          className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
+                            preferences?.email_alerts_enabled === 1 ? 'translate-x-[26px]' : 'translate-x-0.5'
                           }`}
                         />
                       </button>
@@ -195,7 +182,7 @@ export default function Settings() {
                     <button
                       type="submit"
                       disabled={saving}
-                      className="btn btn-primary"
+                      className="btn btn-primary px-6 py-3"
                     >
                       {saving ? 'Saving...' : 'Save Preferences'}
                     </button>
@@ -206,15 +193,13 @@ export default function Settings() {
 
             {/* Test Email */}
             <div className="card mb-6 animate-in-delay-2">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+              <div className="flex items-center gap-2.5 mb-6">
+                <svg className="w-5 h-5 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 <div className="flex-1">
                   <h2 className="text-lg font-semibold text-text-primary">Test Email</h2>
-                  <p className="text-sm text-text-secondary mt-1">
+                  <p className="text-sm text-text-secondary mt-0.5">
                     Send a test email to verify your email alerts are working correctly
                   </p>
                 </div>
@@ -222,7 +207,7 @@ export default function Settings() {
               <button
                 onClick={handleTestEmail}
                 disabled={sendingTest || preferences?.email_alerts_enabled !== 1}
-                className="btn btn-secondary"
+                className="btn btn-secondary px-6 py-3"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -238,15 +223,13 @@ export default function Settings() {
 
             {/* Account Info */}
             <div className="card animate-in-delay-3">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
+              <div className="flex items-center gap-2.5 mb-6">
+                <svg className="w-5 h-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
                 <div className="flex-1">
                   <h2 className="text-lg font-semibold text-text-primary">Account Information</h2>
-                  <p className="text-sm text-text-secondary mt-1">Your profile details</p>
+                  <p className="text-sm text-text-secondary mt-0.5">Your profile details</p>
                 </div>
               </div>
               <dl className="space-y-4">

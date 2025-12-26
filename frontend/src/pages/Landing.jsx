@@ -5,7 +5,7 @@ export default function Landing() {
   const features = [
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
         </svg>
       ),
@@ -14,7 +14,7 @@ export default function Landing() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -23,7 +23,7 @@ export default function Landing() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
@@ -32,7 +32,7 @@ export default function Landing() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
@@ -41,7 +41,7 @@ export default function Landing() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
         </svg>
       ),
@@ -50,7 +50,7 @@ export default function Landing() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       ),
@@ -64,20 +64,29 @@ export default function Landing() {
       {/* Navigation */}
       <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-border-subtle">
         <div className="container-app">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-[72px]">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-lg font-semibold text-text-primary">ClaimCountdown</span>
+              <svg className="w-8 h-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-xl font-bold text-text-primary">ClaimCountdown</span>
             </Link>
             <div className="flex items-center gap-4">
               <Link
                 to="/login"
-                className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors px-4 py-2"
               >
                 Sign in
               </Link>
               <Link
                 to="/register"
-                className="btn btn-primary px-6 py-2.5"
+                className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white rounded-xl transition-all duration-200 hover:transform hover:-translate-y-0.5"
+                style={{
+                  background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+                  boxShadow: '0 4px 14px rgba(99, 102, 241, 0.35)'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 6px 20px rgba(99, 102, 241, 0.5)'}
+                onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 4px 14px rgba(99, 102, 241, 0.35)'}
               >
                 Get started
               </Link>
@@ -163,7 +172,7 @@ export default function Landing() {
                 key={index}
                 className="bg-white p-8 rounded-xl border border-border-subtle hover:shadow-card transition-all duration-200 group"
               >
-                <div className="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-5 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
+                <div className="w-16 h-16 bg-indigo-50 rounded-lg flex items-center justify-center mb-5 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-medium text-text-primary mb-2">
